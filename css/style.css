@@ -1,0 +1,140 @@
+:root {
+    --color3: #12372A;
+    --color2: #436850;
+    --color1: #ADBC9F;
+}
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ outline: none;
+ border: none;
+ text-decoration: none;
+}
+
+body {
+    background-color: var(--color1);
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 7%;
+    background-color: hsl(159, 51%, 14%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    font-size: 27px;
+}
+
+.navbar .navbar-logo {
+    color: white;
+    font-family: "Edu AU VIC WA NT Pre", cursive;
+    font-size: 2rem;
+}
+
+.navbar .navbar-nav a{
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "Quicksand", sans-serif;
+    display: inline-block;
+    font-size: 1.4rem;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: #ffffff;
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid;
+    color: white;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.navbar .navbar-extra a{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.4rem;
+    margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover{
+    color: white;
+}
+
+/* CARA UNTUK MENYEMBUNYIKAN ITEM BERDASARKAN ID */
+#hamburger-menu {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    top: 79px;
+    color: black;
+    min-height: 92  vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    background-image: url('../asset/img/Cafe.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 50%;
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -56%;
+        background-color: white;
+        height: 100vh;
+        width: 30rem;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar .navbar-nav a{
+        color: #12372A;
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .navbar .navbar-nav a::after {
+        color: #12372A;
+        transform-origin: 0 ;
+    }
+
+    .navbar .navbar-nav a:hover{
+        color: #12372A;
+    }
+
+    .navbar .navbar-nav a:hover::after{
+        transform: scaleX(0.3);
+    }
+}
