@@ -14,7 +14,7 @@
 }
 
 body {
-    background-color: var(--color1);
+    background-color: var(--color2);
     color: white;
 }
 
@@ -85,13 +85,61 @@ body {
     position: relative;
     top: 79px;
     color: black;
-    min-height: 92  vh;
+    min-height: 92vh;
     background-size: cover;
     display: flex;
     align-items: center;
     background-image: url('../asset/img/Cafe.jpg');
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.hero::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(0deg, var(--color2) 1%, rgba(255, 255, 255, 0) 10%);
+    display: block;
+    position: absolute;
+}
+
+.hero .content {
+    font-family: "Sour Gummy", sans-serif;
+    color: white;
+    z-index: 10;
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+}
+
+.hero .content h1 {
+    font-size: 4em;
+    text-shadow: 1px 1px 5px hsl(159, 51%, 14%);
+}
+
+.hero .content p {
+    font-size: 1.6rem;
+    mix-blend-mode: difference;
+}
+
+.hero .content .cta {
+    background-color: #ffffff;
+    box-shadow: 1px 1px 5px hsl(159, 51%, 14%);
+    padding: 1rem 3rem;
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #436850;
+    border-radius: 10px;
+}
+
+.hero .content .cta:hover {
+    background-color: var(--color2);
+    color: white;
+    transition: 0.6s;
+}
+
+.about {
+    padding: 10rem 7% 1.4rem;
 }
 
 @media screen and (max-width: 900px) {
